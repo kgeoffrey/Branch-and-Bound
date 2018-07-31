@@ -1,1 +1,1 @@
-# Branch and Bound
+# Brute Force and Exhaustive Search

@@ -1,3 +1,3 @@
 # Caveman Stats!
 
-![Kiku](Images/spongegar.png)
+![Kiku](Images/spongegar_small.png)

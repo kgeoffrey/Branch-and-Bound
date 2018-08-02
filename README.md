@@ -8,12 +8,14 @@ Unnecessarily slow, brute-force search method for highest R^2 of (specified or u
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
+### Dependancies
 ```
-Give examples
+* NumPy
+* SciPy
+* scikit-learn
+* Tabulate
+* 
+
 ```
 
 ### Installing
@@ -23,15 +25,8 @@ A step by step series of examples that tell you how to get a development env run
 Say what the step will be
 
 ```
-pip install cavemanstats
+pip install cavemanstatistics
 ```
-End with an example of getting some data out of the system or using it for a little demo
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 ## Authors
 

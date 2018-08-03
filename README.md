@@ -7,10 +7,10 @@ This package contains unnecessarily slow, brute-force search methods for finding
 ### Dependancies
 
 * NumPy
+* Pandas
 * SciPy
 * scikit-learn
 * Tabulate
-
 
 ### Installing
 
@@ -46,7 +46,7 @@ ExhaustiveSearch().solve() returns a touple containing a string (dependant varia
 
 Parameters:
 * data:  has to be a pandas dataframe
-* remove: a place list of variable names that you would like to exclude as depedant variables (if none put [])
+* remove: place list of variable names that you would like to exclude as depedant variables (or place an empty list)
 * lowerbound: smallest integer number of explanatory variables in solution set
 * upperbound: largest integer number of exoplanatory variables in solution set
 * adjusted_R2: True for adjusted R^2, false for R^2
@@ -67,7 +67,7 @@ BruteForce().solve() returns a touple containing a string (dependant) and a list
 
 Parameters:
 * data:  has to be a pandas dataframe
-* Y: the name of the variable that you would like to specify as depedant variable
+* Y: the name of the variable that you would like to specify as dependant variable
 * lowerbound: smallest integer number of explanatory variables in solution set
 * upperbound: largest integer number of exoplanatory variables in solution set
 * adjusted_R2: True for adjusted R^2, false for R^2

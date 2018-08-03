@@ -1,12 +1,8 @@
 ![Kiku](Images/spongegar.png)
 
-# cavemanstats!
+# cavemanstatistics 1.0
 
-Unnecessarily slow, brute-force search method for highest R^2 of (specified or unspecified) Linear Regression Models. 
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This package contains unnecessarily slow, brute-force search methods for finding highest R^2 of (specified or unspecified) Linear Regression Models. It is mainly a personal project for getting to know packaging with pypi.org and developing my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods.
 
 ### Dependancies
 ```
@@ -14,23 +10,72 @@ These instructions will get you a copy of the project up and running on your loc
 * SciPy
 * scikit-learn
 * Tabulate
-* 
-
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Simply install with:
 
 ```
 pip install cavemanstatistics
 ```
 
+## Quick documentation
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+After you installed, import:
+
+```python
+from cavemanstatistics import ExhaustiveSearch, BruteForce
+```
+
+
+#### Search for highest R^2 (unspecified dependant variable):
+
+```python
+model, results = ExhaustiveSearch(data = pd.dataframe, remove = list, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
+y, x = model
+print(y, x)
+
+('depedant variable', ['list of explanatory variables'])
+
+```
+
+ExhaustiveSearch().solve() returns a touple containing a string (dependant variable) and a list (explanatory variables) and a sorted dictionary with all results.
+
+Parameters:
+* data:  has to be a pandas dataframe
+* remove: a place list of variable names that you would like to exclude as depedant variables (if none put [])
+* lowerbound: smallest integer number of explanatory variables in solution set
+* upperbound: largest integer number of exoplanatory variables in solution set
+* adjusted_R2: True for adjusted R^2, false for R^2
+
+
+#### Search for highest R^2 (specified dependant variable):
+
+```python
+model, results = BruteForce(data = pd.dataframe, Y = str, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
+y, x = model
+print(y, x)
+
+('depedant variable', ['list of explanatory variables'])
+
+```
+
+BruteForce().solve() returns a touple containing a string (dependant) and a list (explanatory variables) and a sorted dictionary with all results.
+
+Parameters:
+* data:  has to be a pandas dataframe
+* Y: the name of the variable that you would like to specify as depedant variable
+* lowerbound: smallest integer number of explanatory variables in solution set
+* upperbound: largest integer number of exoplanatory variables in solution set
+* adjusted_R2: True for adjusted R^2, false for R^2
+
+
 ## Authors
 
-* **Geoffrey Kasenbacher** - *Initial work* - [PurpleBooth](https://github.com/kgeoffrey)
+* **Geoffrey Kasenbacher** - [kgeoffrey](https://github.com/kgeoffrey)
 
 ## License
 
@@ -38,5 +83,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* This is a spawn of the frustration caused by the R-Package leaps
-* Tip my fedora to the ascii art creators
+* This is a spawn of the frustration caused by the R-Package 'leaps'
+* Tip fedora to the ascii art creators

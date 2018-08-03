@@ -2,19 +2,19 @@
 
 # cavemanstatistics 1.0
 
-This package contains unnecessarily slow, brute-force search methods for finding highest R^2 of (specified or unspecified) Linear Regression Models. It is mainly a personal project for getting to know packaging with pypi.org and developing my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods.
+This package contains unnecessarily slow, brute-force search methods for finding highest R^2 of (with specified or unspecified dependant variable) Linear Regression Models. It is mainly a personal project for getting to know packaging with pypi.org and developing my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods.
 
 ### Dependancies
-```
+
 * NumPy
 * SciPy
 * scikit-learn
 * Tabulate
-```
+
 
 ### Installing
 
-Simply install with:
+Install with:
 
 ```
 pip install cavemanstatistics
@@ -24,7 +24,7 @@ pip install cavemanstatistics
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-After you installed, import:
+After installation, import:
 
 ```python
 from cavemanstatistics import ExhaustiveSearch, BruteForce
@@ -36,9 +36,9 @@ from cavemanstatistics import ExhaustiveSearch, BruteForce
 ```python
 model, results = ExhaustiveSearch(data = pd.dataframe, remove = list, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
 y, x = model
-print(y, x)
+print(model)
 
-('depedant variable', ['list of explanatory variables'])
+('depedant variable', [list of explanatory variables])
 
 ```
 
@@ -57,9 +57,9 @@ Parameters:
 ```python
 model, results = BruteForce(data = pd.dataframe, Y = str, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
 y, x = model
-print(y, x)
+print(model)
 
-('depedant variable', ['list of explanatory variables'])
+('depedant variable', [list of explanatory variables])
 
 ```
 

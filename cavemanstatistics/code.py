@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[ ]:
-
-
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression  
@@ -19,8 +14,83 @@ from tabulate import tabulate
 with open('stringlist.pkl', 'wb') as f:
        #pickle.dump(stringlist, f)
 """
-with open('stringlist.pkl', 'rb') as f:
-      stringlist = pickle.load(f)
+#with open('stringlist.pkl', 'rb') as f:
+      #stringlist = pickle.load(f)
+
+s1 =""" 
+
+  I'm programmed for etiquette, not destruction.                                         
+  You may want to consider setting appropriate bounds to                                           
+  find a solution in a reasoable time!
+  
+               \  .-.                                
+                 /_ _\                               
+                 |o^o|                               
+                 \ _ /                               
+                .-'-'-.              BLEEP BOOP BLOOP
+              /`)  .  (`\            (THIS MEANS YES)
+             / /|.-'-.|\ \         /                 
+             \ \| (_) |/ /  .-""-.                   
+              \_'-.-'/_/   /[] _ _\                  
+              /_/ \_/ \_\ _|_o_LII|_                 
+                |'._.'|  / | ==== | \                
+                |  |  |  |_| ==== |_|                
+                 \_|_/    ||" ||  ||                 
+                 |-|-|    ||LI  o ||                 
+                 |_|_|    ||'----'||                 
+                /_/ \_\  /__|    |__\                
+
+"""
+
+s2 ="""
+
+
+Input data must be of type pandas Dataframe ( ་ ⍸ ་ )
+
+
+"""
+
+s3 ="""
+
+
+"Bounds must be integers! ಠ_ಠ
+
+
+
+"""
+
+s4 = """
+
+
+adjusted_r2 needs to be boolean: True or False (ノಠ益ಠ)ノ
+
+
+
+
+"""
+
+s5 = """
+Used to be Yoda
+"""
+
+s6 = """
+
+____ ____ _  _ ____ _  _ ____ _  _    ____ ___ ____ ___ _ ____ ___ _ ____ ____ 
+|    |__| |  | |___ |\/| |__| |\ |    [__   |  |__|  |  | [__   |  | |    [__  
+|___ |  |  \/  |___ |  | |  | | \|    ___]  |  |  |  |  | ___]  |  | |___ ___] 
+
+ Version 1.0                                            © Geoffrey Kasenbacher                                                                  
+
+
+"""
+
+stringlist = []
+stringlist.append(s1)
+stringlist.append(s2)
+stringlist.append(s3)
+stringlist.append(s4)
+stringlist.append(s5)
+stringlist.append(s6)
         
 ## this will solve all combinations of Y and X - linear regressions and return the one with highest R^2
 

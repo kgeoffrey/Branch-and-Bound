@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cavemanstatistics",
-    version="0.3",
+    version="0.5",
     author="Geoffrey Kasenbacher",
     author_email="gkasenbacher@gmail.com",
     description="Exhaustive-Search for best R^2 in Linear Regression Models",

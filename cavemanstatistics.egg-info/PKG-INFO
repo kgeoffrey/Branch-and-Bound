@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: cavemanstatistics
-Version: 0.3
+Version: 0.5
 Summary: Exhaustive-Search for best R^2 in Linear Regression Models
 Home-page: https://github.com/kgeoffrey/cavemanstats
 Author: Geoffrey Kasenbacher
@@ -8,42 +8,82 @@ Author-email: gkasenbacher@gmail.com
 License: UNKNOWN
 Description: ![Kiku](Images/spongegar.png)
         
-        # cavemanstats!
+        # cavemanstatistics 1.0
         
-        Unnecessarily slow, brute-force search method for highest R^2 of (specified or unspecified) Linear Regression Models. 
+        This package contains unnecessarily slow, brute-force search methods for finding highest R^2 (of linear regression models with specified or unspecified dependant variable) in a dataset. This project is mainly intended to  get to know packaging with pypi.org and to develope my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods. Be careful about combinatorial explosion and set the bounds appropriately. 
         
-        ## Getting Started
+        ### Dependancies
         
-        These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-        
-        ### Prerequisites
-        
-        What things you need to install the software and how to install them
-        
-        ```
-        Give examples
-        ```
+        * NumPy
+        * Pandas
+        * SciPy
+        * scikit-learn
+        * Tabulate
         
         ### Installing
         
-        A step by step series of examples that tell you how to get a development env running
-        
-        Say what the step will be
+        Install with:
         
         ```
-        pip install cavemanstats
+        pip install cavemanstatistics
         ```
-        End with an example of getting some data out of the system or using it for a little demo
         
-        ## Built With
+        ## Quick documentation
         
-        * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-        * [Maven](https://maven.apache.org/) - Dependency Management
-        * [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+        These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+        
+        After installation, import:
+        
+        ```python
+        from cavemanstatistics import ExhaustiveSearch, BruteForce
+        ```
+        
+        
+        #### Search for highest R^2 (unspecified dependant variable):
+        
+        ```python
+        model, results = ExhaustiveSearch(data = pd.dataframe, remove = list, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
+        y, x = model
+        print(model)
+        
+        ('depedant variable', [list of explanatory variables])
+        
+        ```
+        
+        ExhaustiveSearch().solve() returns a touple containing a string (dependant variable) and a list (explanatory variables) and a sorted dictionary with all results.
+        
+        Parameters:
+        * data:  has to be a pandas dataframe
+        * remove: place list of variable names that you would like to exclude as depedant variables (or place an empty list)
+        * lowerbound: smallest integer number of explanatory variables in solution set
+        * upperbound: largest integer number of exoplanatory variables in solution set
+        * adjusted_R2: True for adjusted R^2, false for R^2
+        
+        
+        #### Search for highest R^2 (specified dependant variable):
+        
+        ```python
+        model, results = BruteForce(data = pd.dataframe, Y = str, lowerbound = int, upperbound = int, adjusted_R2 = bool).solve()
+        y, x = model
+        print(model)
+        
+        ('depedant variable', [list of explanatory variables])
+        
+        ```
+        
+        BruteForce().solve() returns a touple containing a string (dependant) and a list (explanatory variables) and a sorted dictionary with all results.
+        
+        Parameters:
+        * data:  has to be a pandas dataframe
+        * Y: the name of the variable that you would like to specify as dependant variable
+        * lowerbound: smallest integer number of explanatory variables in solution set
+        * upperbound: largest integer number of exoplanatory variables in solution set
+        * adjusted_R2: True for adjusted R^2, false for R^2
+        
         
         ## Authors
         
-        * **Geoffrey Kasenbacher** - *Initial work* - [PurpleBooth](https://github.com/kgeoffrey)
+        * **Geoffrey Kasenbacher** - [kgeoffrey](https://github.com/kgeoffrey)
         
         ## License
         
@@ -51,8 +91,8 @@ Description: ![Kiku](Images/spongegar.png)
         
         ## Acknowledgments
         
-        * This is a spawn of the frustration caused by the R-Package leaps
-        * Tip my fedora to the ascii art creators
+        * This is a spawn of the frustration caused by the R-Package 'leaps'
+        * Tip fedora to the ascii art creators
         
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3

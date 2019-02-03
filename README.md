@@ -2,7 +2,7 @@
 
 # cavemanstatistics 1.0
 
-This package contains unnecessarily slow, brute-force search methods for finding highest R^2 (of linear regression models with specified or unspecified dependant variable) in a dataset. This project is mainly intended to  get to know packaging with pypi.org and to develope my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods. Be careful about combinatorial explosion and set the bounds appropriately. 
+This package contains brute-force search methods for finding highest R^2 (of linear regression models with specified or unspecified dependant variable) in a dataset. This project is mainly intended to  get to know packaging with pypi.org and to develope my workflow. In the future I'd like to vectorize the loops and maybe add more search options and better search methods. Be careful about combinatorial explosion and set the bounds appropriately. 
 
 ### Dependancies
 
